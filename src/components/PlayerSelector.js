@@ -1,29 +1,40 @@
 import React, { Component } from 'react';
+import {FormGroup, ControlLabel, FormControl, Table} from "react-bootstrap";
 
 class PlayerSelector extends Component {
-  // Constructor to build options
-
 
   render() {
-      return(
-        <div className="player-selector">
-
-          <div class="form-group">
-            <label for="team">Select Team:</label>
-            <select class="form-control" id="team">
-              <option value="Boston Red Sox">Boston Red Sox</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="team">Select Pitcher:</label>
-            <select class="form-control" id="team">
-              <option value="Rick Porcello">Rick Porcello</option>
-            </select>
-          </div>
-        </div>
-      )
+    return(
+      <Table>
+        <tbody>
+          <tr>
+            <td>
+              <FormGroup controlId="formControlsSelect">
+               <ControlLabel>Team</ControlLabel>
+               <FormControl componentClass="select" placeholder="select">
+                 <option value="Boston Red Sox">Boston Red Sox</option>
+                 <option value="other">...</option>
+               </FormControl>
+             </FormGroup>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <FormGroup controlId="formControlsSelect">
+               <ControlLabel>Pitcher</ControlLabel>
+               <FormControl componentClass="select" placeholder="select">
+                 <option value="Rick Porcello">Rick Porcello</option>
+                 <option value="Drew Pomeranz">Drew Pomeranz</option>
+               </FormControl>
+             </FormGroup>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+    )
   }
+
+
 
 }
 

@@ -3,14 +3,13 @@ body {
   background-size: cover;
 }
 
-.player-selector {
+.player-window {
   display: inline-block;
   height: 100%;
   width: 30%;
   margin-right: 40px;
   background-color: white;
   border-radius: 0.5em;
-
 }
 
 .player-selection-row {
@@ -28,4 +27,12 @@ body {
 
 .selector {
   width: 100%;
+}
+
+.player-photo {
+  height: 40px;
+}
+
+.player-photo img{
+  height: 50%;
 }
