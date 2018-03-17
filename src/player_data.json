@@ -1,0 +1,3 @@
+/* Demo data */
+
+{"teams":{"Boston Red Sox":[{"name":"Rick Porcello", "salary":20125000, "era":4.65, "games_played":33, "innings_pitched":203, "so":181}, {"name":"Drew Pomeranz", "salary":4450000, "era":3.32, "games_played":32, "innings_pitched":173, "so":174}]}}
