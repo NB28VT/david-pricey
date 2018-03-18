@@ -1,6 +1,7 @@
 body {
   background-image: url("images/background.jpg");
   background-size: cover;
+  font-family: 'Anton', sans-serif;
 }
 
 .player-window {
@@ -35,4 +36,14 @@ body {
 
 .player-photo img{
   height: 50%;
+}
+
+
+
+.price-y-er {
+  color: red;
+}
+
+.less-price-y-er {
+  color: green;
 }

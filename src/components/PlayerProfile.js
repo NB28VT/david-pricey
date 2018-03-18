@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Table} from "react-bootstrap";
-// import mockProfilePhoto from "../images/rick-porcello.jpg"
+import NumberFormat from 'react-number-format';
 
 class PlayerProfile extends Component {
 
@@ -8,24 +8,29 @@ class PlayerProfile extends Component {
     return `/images/${this.props.playerData.image_path}.jpg`
   }
 
-  // name: "DrewPomeranz",
-  // salary: 4450000,
-  // era: 3.32,
-  // games_played: 32,
-  // innings_pitched: 173,
-  // strikeouts: 174,
-  // image_path: "drew-pomeranz"
-
-
   costPerGame() {
     return "$ " + (this.props.playerData.salary / this.props.playerData.games_played).toFixed(2);
   }
 
   costPerInning(){
+    return "$ " + (this.props.playerData.salary / this.props.playerData.innings_pitched).toFixed(2);
   }
 
   costPerStrikeout(){
+    return "$ " + (this.props.playerData.salary / this.props.playerData.strikeouts).toFixed(2);
   }
+
+  determineCostClass(){
+    // TODO: dynamically caluclate these in top level components
+    if (this.props.playerData.name == "Rick Porcello") {
+      return "price-y-er";
+    } else {
+      return "less-price-y-er";
+    }
+  }
+
+
+
 
   render() {
     return(
@@ -41,7 +46,9 @@ class PlayerProfile extends Component {
           </tr>
           <tr>
             <td>Salary</td>
-            <td>{this.props.playerData.salary}</td>
+            <td>
+              <NumberFormat value={this.props.playerData.salary} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+            </td>
           </tr>
           <tr>
             <td>ERA</td>
@@ -49,15 +56,21 @@ class PlayerProfile extends Component {
           </tr>
           <tr>
             <td>Cost Per Game</td>
-            <td>{this.costPerGame()}</td>
+            <td className={this.determineCostClass()}>
+              <NumberFormat value={this.costPerGame()} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+            </td>
           </tr>
           <tr>
             <td>Cost Per Inning</td>
-            <td>{this.costPerInning()}</td>
+            <td className={this.determineCostClass()}>
+              <NumberFormat value={this.costPerInning()} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+            </td>
           </tr>
           <tr>
             <td>Cost Per Strikeout</td>
-            <td>{this.costPerStrikeout()}</td>
+            <td className={this.determineCostClass()}>
+              <NumberFormat value={this.costPerStrikeout()} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+            </td>
           </tr>
         </tbody>
       </Table>

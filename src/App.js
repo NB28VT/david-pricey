@@ -12,7 +12,7 @@ const porcelloData = {
 }
 
 const pomeranzData = {
-  name: "DrewPomeranz",
+  name: "Drew Pomeranz",
   salary: 4450000,
   era: 3.32,
   games_played: 32,
